@@ -1,0 +1,38 @@
+dependencies {
+	compile project(":org.spf.common")
+	compile project(':org.spf.cmakelists')
+
+	compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore', version: '2.22.0'
+	compile group: 'org.eclipse.jdt', name: 'org.eclipse.jdt.core', version: '3.10.0'
+	compile group: 'org.eclipse.platform', name: 'org.eclipse.equinox.common', version: '3.12.0'
+	compile group: 'org.eclipse.core', name: 'org.eclipse.core.resources', version: '3.7.100'
+
+	compile "org.eclipse.xtext:org.eclipse.xtext:${xtextVersion}"
+	compile "org.eclipse.xtext:org.eclipse.xtext.xbase:${xtextVersion}"
+}
+
+configurations {
+	mwe2 {
+		extendsFrom compile
+	}
+}
+
+dependencies {
+	mwe2 "org.eclipse.emf:org.eclipse.emf.mwe2.launch:2.8.3"
+	mwe2 "org.eclipse.xtext:org.eclipse.xtext.xtext.generator:${xtextVersion}"
+}
+
+task generateXtextLanguage(type: JavaExec) {
+	main = 'org.eclipse.emf.mwe2.launch.runtime.Mwe2Launcher'
+	classpath = configurations.mwe2
+	inputs.file "src/org/spf/cmakelists/GenerateCMakeLists.mwe2"
+	inputs.file "src/org/spf/cmakelists/CMakeLists.xtext"
+	outputs.dir "src-gen"
+	args += "src/org/spf/cmakelists/GenerateCMakeLists.mwe2"
+	args += "-p"
+	args += "rootPath=/${projectDir}/.."
+}
+
+generateXtext.dependsOn(generateXtextLanguage)
+clean.dependsOn(cleanGenerateXtextLanguage)
+eclipse.classpath.plusConfigurations += [configurations.mwe2]

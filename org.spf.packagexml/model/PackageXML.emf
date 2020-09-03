@@ -1,0 +1,80 @@
+@namespace(uri="http://spf.org/packagexml", prefix="PackageXML")
+package PackageXML;
+
+class Package {
+	attr String[1] format;
+	attr String[1] version;
+	val Tag[*] tags;
+} 
+
+abstract class Tag {
+}
+
+abstract class DependencyTag extends Tag {
+}
+
+class NameTag extends Tag {
+	val DeclaredPackageName[1] declaredPackageName;
+}
+
+class DeclaredPackageName {
+	attr String[1] name;
+}
+
+class VersionTag extends Tag {
+	attr String[1] version;
+}
+
+class DescriptionTag extends Tag {
+	attr String[*] descriptionText;
+}
+
+class MaintainerTag extends Tag {
+	attr String[1] email;
+	attr String[*] maintainerText;
+}
+
+class LicenseTag extends Tag {
+	attr String[1] license;
+}
+
+class AuthorTag extends Tag {
+	attr String email; 
+	attr String[*] authorText;
+}
+
+class UrlTag extends Tag {
+	attr String[1] type;
+	attr String[1] url;
+}
+
+class RunDependencyTag extends DependencyTag {
+	attr String[1] name;
+}
+
+class BuildDependDependencyTag extends DependencyTag {
+	attr String[1] name;
+}
+
+class ExecDependDependencyTag extends DependencyTag {
+	attr String[1] name;
+}
+
+class BuildToolDependDependencyTag extends DependencyTag {
+	attr String[1] name;
+}
+
+class ExportTag extends Tag {
+	val ArbitraryTag[*] arbitrary_tags;
+}
+
+class ArbitraryTag extends Tag {
+	attr String[1] name;
+	attr String[*] innerText;
+	val Attribute[*] attributes;
+}
+
+class Attribute {
+	attr String[1] key;
+	attr String[1] value;
+}

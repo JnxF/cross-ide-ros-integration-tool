@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.spf.packagexml/src-gen" editDirectory="/org.spf.packagexml.edit/src-gen"
+    editorDirectory="/org.spf.packagexml.editor/src-gen" modelPluginID="org.spf.packagexml"
+    modelName="PackageXML" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="/org.spf.packagexml.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>PackageXML.ecore</foreignModel>
+  <genPackages prefix="PackageXML" basePackage="org.spf" disposableProviderFactory="true"
+      ecorePackage="PackageXML.ecore#/">
+    <genClasses ecoreClass="PackageXML.ecore#//Package">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageXML.ecore#//Package/format"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageXML.ecore#//Package/version"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PackageXML.ecore#//Package/tags"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="PackageXML.ecore#//Tag"/>
+    <genClasses image="false" ecoreClass="PackageXML.ecore#//DependencyTag"/>
+    <genClasses ecoreClass="PackageXML.ecore#//NameTag">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PackageXML.ecore#//NameTag/declaredPackageName"/>
+    </genClasses>
+    <genClasses ecoreClass="PackageXML.ecore#//DeclaredPackageName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageXML.ecore#//DeclaredPackageName/name"/>
+    </genClasses>
+    <genClasses ecoreClass="PackageXML.ecore#//VersionTag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageXML.ecore#//VersionTag/version"/>
+    </genClasses>
+    <genClasses ecoreClass="PackageXML.ecore#//DescriptionTag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageXML.ecore#//DescriptionTag/descriptionText"/>
+    </genClasses>
+    <genClasses ecoreClass="PackageXML.ecore#//MaintainerTag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageXML.ecore#//MaintainerTag/email"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageXML.ecore#//MaintainerTag/maintainerText"/>
+    </genClasses>
+    <genClasses ecoreClass="PackageXML.ecore#//LicenseTag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageXML.ecore#//LicenseTag/license"/>
+    </genClasses>
+    <genClasses ecoreClass="PackageXML.ecore#//AuthorTag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageXML.ecore#//AuthorTag/email"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageXML.ecore#//AuthorTag/authorText"/>
+    </genClasses>
+    <genClasses ecoreClass="PackageXML.ecore#//UrlTag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageXML.ecore#//UrlTag/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageXML.ecore#//UrlTag/url"/>
+    </genClasses>
+    <genClasses ecoreClass="PackageXML.ecore#//RunDependencyTag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageXML.ecore#//RunDependencyTag/name"/>
+    </genClasses>
+    <genClasses ecoreClass="PackageXML.ecore#//BuildDependDependencyTag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageXML.ecore#//BuildDependDependencyTag/name"/>
+    </genClasses>
+    <genClasses ecoreClass="PackageXML.ecore#//ExecDependDependencyTag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageXML.ecore#//ExecDependDependencyTag/name"/>
+    </genClasses>
+    <genClasses ecoreClass="PackageXML.ecore#//BuildToolDependDependencyTag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageXML.ecore#//BuildToolDependDependencyTag/name"/>
+    </genClasses>
+    <genClasses ecoreClass="PackageXML.ecore#//ExportTag">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PackageXML.ecore#//ExportTag/arbitrary_tags"/>
+    </genClasses>
+    <genClasses ecoreClass="PackageXML.ecore#//ArbitraryTag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageXML.ecore#//ArbitraryTag/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageXML.ecore#//ArbitraryTag/innerText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PackageXML.ecore#//ArbitraryTag/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="PackageXML.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageXML.ecore#//Attribute/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageXML.ecore#//Attribute/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

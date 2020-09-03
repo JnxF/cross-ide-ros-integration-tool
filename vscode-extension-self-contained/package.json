@@ -1,0 +1,40 @@
+{
+    "name": "package-xml-package",
+    "displayName": "Cross-IDE ROS Integration Tool",
+    "description": "Mismatched cross-references checker for ROS files",
+    "version": "0.5.0",
+    "publisher": "jnxf",
+    "icon": "images/logo.png",
+    "license": "EPL-1.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/itemis/xtext-languageserver-example.git"
+    },
+    "bugs": {
+        "url": "https://github.com/itemis/xtext-languageserver-example/issues"
+    },
+    "engines": {
+        "vscode": "^1.33.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "activationEvents": [
+        "workspaceContains:**/package.xml"
+    ],
+    "main": "out/extension",
+    "devDependencies": {
+        "vscode": "^1.1.33",
+        "typescript": "^3.3.400",
+        "@types/node": "^11.13.2"
+    },
+    "dependencies": {
+        "vscode-languageclient": "^5.2.1"
+    },
+    "scripts": {
+        "prepublish": "node ./node_modules/vscode/bin/install && tsc -p ./src",
+        "compile": "tsc -p ./src",
+        "watch": "tsc -w -p ./src",
+        "update-vscode": "node ./node_modules/vscode/bin/install"
+    }
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated PackageXML -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.spf.PackageXML.presentation.PackageXMLModelWizardID"
+            name="%_UI_PackageXMLModelWizard_label"
+            class="org.spf.PackageXML.presentation.PackageXMLModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PackageXMLModelFile.gif">
+         <description>%_UI_PackageXMLModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated PackageXML -->
+      <editor
+            id="org.spf.PackageXML.presentation.PackageXMLEditorID"
+            name="%_UI_PackageXMLEditor_label"
+            icon="icons/full/obj16/PackageXMLModelFile.gif"
+            extensions="packagexml"
+            class="org.spf.PackageXML.presentation.PackageXMLEditor"
+            contributorClass="org.spf.PackageXML.presentation.PackageXMLActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

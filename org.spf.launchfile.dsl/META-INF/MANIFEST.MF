@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.spf.launchfile.dsl
+Bundle-ManifestVersion: 2
+Bundle-Name: org.spf.launchfile.dsl
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.spf.launchfile.dsl; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.spf.launchfile,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ org.eclipse.core.resources;bundle-version="3.13.700"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.spf.launchfile.dsl.parser.antlr,
+ org.spf.launchfile.dsl.scoping,
+ org.spf.launchfile.dsl.parser.antlr.internal,
+ org.spf.launchfile.dsl.services,
+ org.spf.launchfile.dsl.serializer,
+ org.spf.launchfile.dsl.validation,
+ org.spf.launchfile.dsl,
+ org.spf.launchfile.dsl.generator
+Import-Package: org.apache.log4j,
+ org.spf.common.util

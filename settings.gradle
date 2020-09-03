@@ -1,0 +1,17 @@
+// Package XML
+include 'org.spf.packagexml'
+include 'org.spf.packagexml.dsl'
+include 'org.spf.packagexml.dsl.ide'
+
+// CMakeLists
+include 'org.spf.cmakelists'
+include 'org.spf.cmakelists.dsl'
+include 'org.spf.cmakelists.dsl.ide'
+
+// Python
+
+// Common
+include 'org.spf.common'
+
+// Visual Studio extension
+include 'vscode-extension-self-contained'

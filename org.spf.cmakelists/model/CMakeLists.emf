@@ -1,0 +1,78 @@
+@namespace(uri="http://spf.org/cmakelists", prefix="CMakeLists")
+package CMakeLists;
+
+
+import "platform:/resource/org.spf.packagexml/model/PackageXML.ecore";
+
+class CMakeListsFile {
+	val Instruction[*] instructions;
+}
+
+abstract class Instruction {
+} 
+
+class CMakeMinimumRequired extends Instruction {
+	attr String[1] version;
+}
+
+class ProjectInstruction extends Instruction {
+	ref PackageXML.DeclaredPackageName[1] declaredPackageName;
+}
+
+class FindPackage extends Instruction {
+	attr String[1] name;
+	attr Boolean required = "false";
+	attr String[*] components;
+} 
+
+class AddExecutable extends Instruction {
+	val Executable[1] name;
+	attr String[+] sources; 
+}
+
+class Executable {
+	attr String[1] name;
+}
+
+class AmentTargetDependencies extends Instruction {
+	ref Executable[1] name;
+	attr String[+] dependencies;
+}
+
+class AmentPackageInstruction extends Instruction {
+}
+
+abstract class InstallInstruction extends Instruction {
+}
+
+class InstallTargets extends InstallInstruction {
+	ref Executable[+] targets;
+	attr Boolean runtime = "false";
+	attr String[1] destination;
+}
+
+class InstallDirectory extends InstallInstruction {
+	attr String[1] directory;
+	attr String[1] destination;
+	attr String[*] patterns;
+}
+
+class IfInstruction extends Instruction {
+	attr String[*] predicate;
+	val Instruction[*] instructions;
+}
+
+class SetInstruction extends Instruction {
+	attr String[1] variable;
+	attr Object[*] arguments;
+}
+
+class AddCompileOptions extends Instruction {
+	attr String[+] options;
+}
+
+class UndefinedInstruction extends Instruction {
+	attr String[1] name;
+	attr Object[*] arguments;
+}
+

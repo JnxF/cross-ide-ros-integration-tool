@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.spf.launchfile/src-gen" editDirectory="/org.spf.launchfile.edit/src-gen"
+    editorDirectory="/org.spf.launchfile.editor/src-gen" modelPluginID="org.spf.launchfile"
+    modelName="LaunchFile" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="/org.spf.launchfile.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>LaunchFile.ecore</foreignModel>
+  <genPackages prefix="LaunchFile" basePackage="org.spf" disposableProviderFactory="true"
+      ecorePackage="LaunchFile.ecore#/">
+    <genClasses ecoreClass="LaunchFile.ecore#//PythonFile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LaunchFile.ecore#//PythonFile/instructions"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="LaunchFile.ecore#//PythonInstruction"/>
+    <genClasses ecoreClass="LaunchFile.ecore#//ImportStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LaunchFile.ecore#//ImportStatement/from"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LaunchFile.ecore#//ImportStatement/imports"/>
+    </genClasses>
+    <genClasses ecoreClass="LaunchFile.ecore#//Function">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LaunchFile.ecore#//Function/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LaunchFile.ecore#//Function/body"/>
+    </genClasses>
+    <genClasses ecoreClass="LaunchFile.ecore#//ReturnStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LaunchFile.ecore#//ReturnStatement/launchDescription"/>
+    </genClasses>
+    <genClasses ecoreClass="LaunchFile.ecore#//LaunchDescription">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LaunchFile.ecore#//LaunchDescription/nodes"/>
+    </genClasses>
+    <genClasses ecoreClass="LaunchFile.ecore#//Node">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LaunchFile.ecore#//Node/node_name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LaunchFile.ecore#//Node/node_executable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LaunchFile.ecore#//Node/output"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LaunchFile.ecore#//Node/parameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LaunchFile.ecore#//Node/package_name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LaunchFile.ecore#//Node/namespace"/>
+    </genClasses>
+    <genClasses ecoreClass="LaunchFile.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LaunchFile.ecore#//Parameter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LaunchFile.ecore#//Parameter/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

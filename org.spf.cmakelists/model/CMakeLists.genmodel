@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.spf.cmakelists/src-gen" editDirectory="/org.spf.cmakelists.edit/src-gen"
+    editorDirectory="/org.spf.cmakelists.editor/src-gen" modelPluginID="org.spf.cmakelists"
+    modelName="CMakeLists" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="../../org.spf.packagexml/model/PackageXML.genmodel#//PackageXML"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>CMakeLists.ecore</foreignModel>
+  <genPackages prefix="CMakeLists" basePackage="org.spf" disposableProviderFactory="true"
+      ecorePackage="CMakeLists.ecore#/">
+    <genClasses ecoreClass="CMakeLists.ecore#//CMakeListsFile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CMakeLists.ecore#//CMakeListsFile/instructions"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="CMakeLists.ecore#//Instruction"/>
+    <genClasses ecoreClass="CMakeLists.ecore#//CMakeMinimumRequired">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CMakeLists.ecore#//CMakeMinimumRequired/version"/>
+    </genClasses>
+    <genClasses ecoreClass="CMakeLists.ecore#//ProjectInstruction">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CMakeLists.ecore#//ProjectInstruction/declaredPackageName"/>
+    </genClasses>
+    <genClasses ecoreClass="CMakeLists.ecore#//FindPackage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CMakeLists.ecore#//FindPackage/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CMakeLists.ecore#//FindPackage/required"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CMakeLists.ecore#//FindPackage/components"/>
+    </genClasses>
+    <genClasses ecoreClass="CMakeLists.ecore#//AddExecutable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CMakeLists.ecore#//AddExecutable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CMakeLists.ecore#//AddExecutable/sources"/>
+    </genClasses>
+    <genClasses ecoreClass="CMakeLists.ecore#//Executable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CMakeLists.ecore#//Executable/name"/>
+    </genClasses>
+    <genClasses ecoreClass="CMakeLists.ecore#//AmentTargetDependencies">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CMakeLists.ecore#//AmentTargetDependencies/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CMakeLists.ecore#//AmentTargetDependencies/dependencies"/>
+    </genClasses>
+    <genClasses ecoreClass="CMakeLists.ecore#//AmentPackageInstruction"/>
+    <genClasses image="false" ecoreClass="CMakeLists.ecore#//InstallInstruction"/>
+    <genClasses ecoreClass="CMakeLists.ecore#//InstallTargets">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CMakeLists.ecore#//InstallTargets/targets"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CMakeLists.ecore#//InstallTargets/runtime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CMakeLists.ecore#//InstallTargets/destination"/>
+    </genClasses>
+    <genClasses ecoreClass="CMakeLists.ecore#//InstallDirectory">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CMakeLists.ecore#//InstallDirectory/directory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CMakeLists.ecore#//InstallDirectory/destination"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CMakeLists.ecore#//InstallDirectory/patterns"/>
+    </genClasses>
+    <genClasses ecoreClass="CMakeLists.ecore#//IfInstruction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CMakeLists.ecore#//IfInstruction/predicate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CMakeLists.ecore#//IfInstruction/instructions"/>
+    </genClasses>
+    <genClasses ecoreClass="CMakeLists.ecore#//SetInstruction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CMakeLists.ecore#//SetInstruction/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CMakeLists.ecore#//SetInstruction/arguments"/>
+    </genClasses>
+    <genClasses ecoreClass="CMakeLists.ecore#//AddCompileOptions">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CMakeLists.ecore#//AddCompileOptions/options"/>
+    </genClasses>
+    <genClasses ecoreClass="CMakeLists.ecore#//UndefinedInstruction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CMakeLists.ecore#//UndefinedInstruction/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CMakeLists.ecore#//UndefinedInstruction/arguments"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

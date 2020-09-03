@@ -1,0 +1,62 @@
+{
+    "name": "MyXML",
+    "scopeName": "text.myxml",
+    "fileTypes": [
+        "xml"
+    ],
+    "repository": {
+        "general": {
+            "patterns": [
+                {
+                    "include": "#comments"
+                },
+                {
+                    "include": "#brackets"
+                },
+                {
+                    "include": "#autoClosingPairs"
+                },
+                {
+                    "include": "#folding"
+                }
+            ]
+        },
+        "comments": {
+            "blockComment": [ "<!--", "-->" ]
+        },
+        "brackets": [
+            ["<!--", "-->"],
+            ["<", ">"],
+            ["{", "}"],
+            ["(", ")"]
+        ],
+        "autoClosingPairs": [
+            { "open": "{", "close": "}"},
+            { "open": "[", "close": "]"},
+            { "open": "(", "close": ")" },
+            { "open": "\"", "close": "\"", "notIn": ["string"] },
+            { "open": "'", "close": "'", "notIn": ["string"] },
+            { "open": "<!--", "close": "-->", "notIn": [ "comment", "string" ]},
+            { "open": "<![CDATA[", "close": "]]>", "notIn": [ "comment", "string" ]}
+        ],
+        "surroundingPairs": [
+            { "open": "'", "close": "'" },
+            { "open": "\"", "close": "\"" },
+            { "open": "{", "close": "}"},
+            { "open": "[", "close": "]"},
+            { "open": "(", "close": ")" },
+            { "open": "<", "close": ">" }
+        ],
+        "folding": {
+            "markers": {
+                "start": "^\\s*<!--\\s*#region\\b.*-->",
+                "end": "^\\s*<!--\\s*#endregion\\b.*-->"
+            }
+        }
+    },
+    "patterns": [
+        {
+            "include": "#general"
+        }
+    ]
+}

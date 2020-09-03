@@ -1,0 +1,42 @@
+@namespace(uri="http://spf.org/launchfile", prefix="LaunchFile")
+package LaunchFile;
+
+class PythonFile {
+	ordered val PythonInstruction[*] instructions;
+}
+
+abstract class PythonInstruction {
+}
+
+class ImportStatement extends PythonInstruction {
+	attr String from;
+	attr String[+] imports;
+}
+
+class Function extends PythonInstruction {
+	attr String[1] name;
+	ordered val PythonInstruction[+] body;
+}
+
+class ReturnStatement extends PythonInstruction {
+	val LaunchDescription[1] launchDescription;
+}
+
+class LaunchDescription {
+	val Node[*] nodes;
+}
+
+class Node {
+	attr String node_name;
+	attr String[1] node_executable;
+	attr String output;
+	val Parameter[*] parameters;
+	attr String[1] package_name;
+	attr String namespace;
+}
+
+class Parameter {
+	attr String[1] name;
+	attr String[1] value;
+}
+

@@ -1,0 +1,52 @@
+grammar org.spf.launchfile.dsl.LaunchFile with org.eclipse.xtext.common.Terminals
+
+import "http://spf.org/launchfile"
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+PythonFile returns PythonFile:
+	(instructions+=PythonInstruction)*;
+
+PythonInstruction returns PythonInstruction:
+	ImportStatement |
+	Function;
+
+ImportStatement returns ImportStatement:
+	('from' from=(ID | FromString))?
+	'import' imports+=(FromString | "LaunchDescription" | "Node")
+	("," imports+=(FromString | "LaunchDescription" | "Node"))*;
+
+FromString returns ecore::EString:
+	DOTTED_PARAM;
+
+Function returns Function:
+	"def" name=ID "(" ")" ":"
+	(body+=PythonInstruction)*
+	(body+=ReturnStatement)?;
+
+ReturnStatement returns ReturnStatement:
+	"return" launchDescription=LaunchDescription;
+
+LaunchDescription returns LaunchDescription:
+	{LaunchDescription}
+	'LaunchDescription'
+	'(' "["
+	nodes+=Node ("," nodes+=Node)* ","?
+	"]" ')';
+
+Node returns Node:
+	{Node}
+	("Node" | "launch_ros.actions.Node")
+	'('
+	(('node_name' "=" node_name=STRING)? &
+	('package' "=" package_name=STRING) &
+	('namespace' "=" namespace=STRING)? &
+	('node_executable' "=" node_executable=STRING) &
+	('output' "=" output=STRING)? &
+	('parameters' "=" "[{" parameters+=Parameter ("," parameters+=Parameter)* "}]"))?
+	')';
+
+Parameter returns Parameter:
+	name=STRING ":" value=STRING;
+
+terminal DOTTED_PARAM:
+	ID ("." ID)+;

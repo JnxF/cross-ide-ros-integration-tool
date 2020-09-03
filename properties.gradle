@@ -1,0 +1,29 @@
+allprojects {
+
+  version = '0.03'
+
+  ext {
+    emfVersion = '2.15.+'
+    flexmarkVersion = '0.35.10'
+    guiceVersion = '4.2.3'
+    javaVersion = '1.8'
+    junitVersion = '5.6.0'
+    mweVersion = '2.11.0'
+    parboiledVersion = '2.2.0'
+    scalaVersion = '2.13.1'
+    scalaVersionSuffix = '2.13'
+    scalatestVersion = '3.2.0'
+    xtendVersion = '2.21.0'
+    xtextVersion = '2.22.0'
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+  }
+
+  repositories {
+    flatDir { dirs 'lib' }
+    jcenter()
+    mavenCentral() // TODO test removing once all tests pass
+  }
+
+
+}
