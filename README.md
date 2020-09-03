@@ -7,3 +7,6 @@ Some tools have been developed to alleviate this introduction pain, like ROS Pac
 In this Research Project I implement an integration tool for managing ROS artifacts that integrates with most of the modern IDEs. The main goal is giving consistency to the users' code: raising warnings and IDE suggestions which are the result of examining the relationships and dependencies among ROS artifacts. Therefore, relationships are made explicit and thus it is easier to detect errors.
 
 **Keywords**: Robot Operating System, Language Server Protocol, dependencies.
+
+# Execution
+Run `./gradlew startCode` to build the DSLs and the VS Code extensions.
